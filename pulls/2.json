@@ -1,0 +1,37 @@
+{
+  "number": 2,
+  "title": "P1: add CPU-only repository privacy validation foundation",
+  "body": "## Summary\n\nStarts P1 Engineering Reliability with a CPU-only, standard-library repository privacy and path-boundary validator.\n\n## Included\n\n- Versioned JSON report schema for repository privacy validation\n- Stable P1 failure codes and remediation text\n- Fail-closed checks for local profiles, artifacts, workspaces, model/DFM/checkpoint/media/archive types, credential-like filenames, and oversized non-text files\n- Atomic ignored report output under `.p1-local`\n- PowerShell 5.1 wrapper and Chinese BAT launcher\n- Standard-library unit tests using temporary synthetic files only\n- Linux and Windows GitHub Actions jobs using Python 3.12\n\n## Safety boundary\n\nThis slice:\n\n- does not require a GPU;\n- does not import TensorFlow or DeepFaceLab;\n- does not start training, extraction, merge, export, or VisoMaster;\n- does not read media, checkpoint, DFM, or embedding contents;\n- does not modify workspace or tracked repository files;\n- uses no paid service and downloads no models.\n\n## Local validation\n\n```powershell\npython -m unittest discover -s tests/p1 -p \"test_*.py\" -v\n\n& \".\\19_运行P1仓库隐私与边界检查.bat\" `\n    \"C:\\Path\\To\\python.exe\"\n```\n\n## Next slice\n\nAfter this foundation passes, add versioned P0 report-schema validation and one-command read-only acceptance summaries.",
+  "url": "https://github.com/xli471380-lab/DeepFaceLab-Next/pull/2",
+  "state": "OPEN",
+  "isDraft": true,
+  "createdAt": "2026-07-21T15:20:25Z",
+  "updatedAt": "2026-07-21T15:28:59Z",
+  "closedAt": null,
+  "mergedAt": null,
+  "author": {
+    "login": "xli471380-lab"
+  },
+  "mergedBy": null,
+  "headRefName": "agent/p1-engineering-reliability",
+  "headRefOid": "d81fb4fb09a3dc5a1b51e5139178afb87d8ebbb8",
+  "baseRefName": "develop",
+  "baseRefOid": "0540b02e1266fdb8398001ac88d170a0ecb6b5b9",
+  "mergeCommit": null,
+  "labels": {
+    "totalCount": 0,
+    "nodes": []
+  },
+  "comments": {
+    "totalCount": 0,
+    "nodes": []
+  },
+  "reviews": {
+    "totalCount": 0,
+    "nodes": []
+  },
+  "reviewThreads": {
+    "totalCount": 0,
+    "nodes": []
+  }
+}

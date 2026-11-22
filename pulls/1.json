@@ -1,0 +1,51 @@
+{
+  "number": 1,
+  "title": "P0: establish and accept reproducible historical baseline",
+  "body": "## Summary\n\nEstablishes and locally accepts the first reproducible DeepFaceLab-Next historical baseline before any dependency, runtime, or algorithm modernization.\n\n## Included\n\n- Development roadmap, branch strategy, progress tracker, and next-chat context\n- Security and responsible-use policy\n- Machine profiles and PowerShell 5.1-compatible Windows diagnostics\n- Historical package fingerprinting, extraction, runtime, Python-layout, and TensorFlow/GPU probes\n- Authorized synthetic-dataset preflight and isolated-workspace preparation\n- Controlled source/destination face extraction\n- Bounded SAEHD initial training/save and deterministic resume\n- Controlled merge and mask validation\n- Controlled DFM export and ONNX validation\n- VisoMaster Fusion compatibility acceptance recorder\n- P1 engineering-reliability plan\n\n## Accepted local P0 result\n\nProfile:\n\n```text\nrtx5880-ada × legacy-dfl-rtx3000-20211120\n```\n\nAccepted workflow:\n\n```text\nenvironment/GPU probe\n→ authorized synthetic dataset\n→ isolated workspace\n→ face extraction\n→ SAEHD iteration 2 save\n→ resume to iteration 4\n→ merge 3 images and 3 masks\n→ visual review\n→ DFM export\n→ VisoMaster Fusion listing/loading and one DFM inference\n```\n\nFinal compatibility fixture:\n\n```text\nModel: p0gate_SAEHD\nIteration: 4\nCheckpoint files: 8\nDFM size: 27654198 bytes\nDFM SHA-256: E2F7E8810384FCE392DA0FA8D036795A93282C223E743855E5BCCB1EF22047C8\nONNX opset: 12\nInput: in_face\nOutputs: out_face_mask, out_celeb_face, out_celeb_face_mask\nVisoMaster Fusion branch: main\nVisoMaster Fusion commit: 560c7645d63c07526fe7109fce6abcabf95768fa\n```\n\nGate F was recorded after the DFM appeared in VisoMaster Fusion, an authorized synthetic target image loaded, one face was detected, one DFM inference executed, the preview changed, the application remained responsive, and no blocking provider/tensor error occurred.\n\nThe four-iteration model is a compatibility and reproducibility fixture only. This PR makes no visual-quality or performance claim.\n\n## Scope boundary\n\nThis PR does **not** upgrade Python, TensorFlow, CUDA, cuDNN, NumPy, OpenCV, model architecture, checkpoint format, merger mathematics, or DFM semantics.\n\nNo private media, aligned faces, checkpoints, DFM files, embeddings, credentials, or local machine artifacts are committed. Machine-readable reports and all generated model/data artifacts remain ignored and local.\n\n## Review focus\n\n- Fail-closed path and privacy boundaries\n- PowerShell 5.1 compatibility\n- Temporary staging and atomic commit/rollback behavior\n- Deterministic prompt handling and bounded process termination\n- Report schemas and prerequisite chaining\n- Preservation of the frozen historical baseline\n\n## Next milestone\n\nAfter merge into `develop`, create `agent/p1-engineering-reliability` and begin CPU-only privacy validation, report-schema validation, one-command acceptance summaries, structured failure codes, backup/recovery primitives, and no-GPU CI.",
+  "url": "https://github.com/xli471380-lab/DeepFaceLab-Next/pull/1",
+  "state": "MERGED",
+  "isDraft": false,
+  "createdAt": "2026-07-19T15:39:39Z",
+  "updatedAt": "2026-07-21T15:12:54Z",
+  "closedAt": "2026-07-21T15:12:54Z",
+  "mergedAt": "2026-07-21T15:12:54Z",
+  "author": {
+    "login": "xli471380-lab"
+  },
+  "mergedBy": {
+    "login": "xli471380-lab"
+  },
+  "headRefName": "agent/p0-reproducible-baseline",
+  "headRefOid": "a8cdba51dc1385f1815f4fcb83ae04bffb3f7f70",
+  "baseRefName": "develop",
+  "baseRefOid": "e4b7543ffa1d73b26fce1e31852727f658ba490c",
+  "mergeCommit": {
+    "oid": "0540b02e1266fdb8398001ac88d170a0ecb6b5b9"
+  },
+  "labels": {
+    "totalCount": 0,
+    "nodes": []
+  },
+  "comments": {
+    "totalCount": 1,
+    "nodes": [
+      {
+        "author": {
+          "login": "chatgpt-codex-connector"
+        },
+        "body": "You have reached your Codex usage limits for code reviews. You can see your limits in the [Codex usage dashboard](https://chatgpt.com/codex/cloud/settings/usage).\nTo continue using code reviews, you can upgrade your account or add credits to your account and enable them for code reviews in your [settings](https://chatgpt.com/codex/cloud/settings/code-review).",
+        "url": "https://github.com/xli471380-lab/DeepFaceLab-Next/pull/1#issuecomment-5035740051",
+        "createdAt": "2026-07-21T15:12:06Z",
+        "updatedAt": "2026-07-21T15:12:06Z"
+      }
+    ]
+  },
+  "reviews": {
+    "totalCount": 0,
+    "nodes": []
+  },
+  "reviewThreads": {
+    "totalCount": 0,
+    "nodes": []
+  }
+}
